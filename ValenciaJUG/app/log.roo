@@ -1,0 +1,16 @@
+// Spring Roo 2.0.0.RC2 [rev 76d128f] log opened at 2017-12-06 16:09:10
+project setup --topLevelPackage es.valenciajug.sorteo --java 8 --projectName sorteo --packaging WAR
+jpa setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT 
+entity jpa --class ~.domain.Person
+field string --fieldName name
+repository jpa --entity ~.domain.Person 
+service --entity ~.domain.Person 
+web mvc setup 
+web mvc controller --entity ~.domain.Person --package ~.web --pathPrefix /api --responseType JSON 
+web mvc view setup --type THYMELEAF 
+web mvc controller --entity ~.domain.Person --package ~.web.html --responseType THYMELEAF 
+// Spring Roo 2.0.0.RC2 [rev 76d128f] log opened at 2017-12-06 16:19:21
+hint
+// Spring Roo 2.0.0.RC2 [rev 76d128f] log opened at 2017-12-06 17:17:02
+hint
+hint

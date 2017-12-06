@@ -1,0 +1,10 @@
+project setup --topLevelPackage es.valenciajug.sorteo --java 8 --projectName sorteo --packaging WAR
+jpa setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT 
+entity jpa --class ~.domain.Person
+field string --fieldName name --notNull
+repository jpa --entity ~.domain.Person 
+service --entity ~.domain.Person
+web mvc setup
+web mvc controller --entity ~.domain.Person --package ~.web.api --pathPrefix /api --responseType JSON 
+web mvc view setup --type THYMELEAF 
+web mvc controller --entity ~.domain.Person --package ~.web.html --responseType THYMELEAF 
